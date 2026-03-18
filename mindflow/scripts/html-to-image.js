@@ -378,7 +378,7 @@ async function convert(options) {
       });
 
       const measurementHtml = wrapHtml(htmlContent, MEASUREMENT_VIEWPORT.width, MEASUREMENT_VIEWPORT.height);
-      await page.setContent(measurementHtml, { waitUntil: 'networkidle0', timeout: options.timeout });
+      await page.setContent(measurementHtml, { waitUntil: 'domcontentloaded', timeout: options.timeout });
 
       await waitForMarkmapRender(page, options.timeout);
 
@@ -428,8 +428,10 @@ async function convert(options) {
     }
     console.log(`  Timeout: ${options.timeout}ms`);
 
-    // Set content and wait for network
-    await page.setContent(htmlContent, { waitUntil: 'networkidle0', timeout: options.timeout });
+    // Set content and wait for DOM to be ready
+    // Use 'domcontentloaded' instead of 'networkidle0' or 'load' to avoid waiting
+    // for external CDN resources that may be referenced but no longer accessible
+    await page.setContent(htmlContent, { waitUntil: 'domcontentloaded', timeout: options.timeout });
 
     // Wait for markmap to render if present
     const hasMindmap = await page.evaluate(() => !!document.querySelector('#mindmap'));
