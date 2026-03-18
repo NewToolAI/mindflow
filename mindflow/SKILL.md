@@ -38,7 +38,7 @@ Use LLM to convert input content into mind map Markdown format according to the 
 - **Strictly Follow Node Hierarchy:** Only one root node, subsequent nodes progress by hierarchy levels
 - **Support All Basic Markdown Syntax:** Bold, code, links, and LaTeX formulas can be embedded in node text
 - **Output Format Compliance:** Strictly follow the format below; do not output any other extraneous content
-- **Content Limit:** Ensure output content is limited to 250 tokens
+- **Content Limit:** Ensure output content is limited to 300 tokens
 - **Hierarchy Limit:** Mind map generates maximum 4 levels (root node counts as level 1)
 
 **Output Format:**
@@ -59,7 +59,7 @@ Use LLM to convert input content into mind map Markdown format according to the 
 Use markmap command to convert Markdown to HTML:
 
 ```bash
-markmap --no-open --no-toolbar -o <html_file> <markdown_file>
+markmap --offline --no-open --no-toolbar -o <html_file> <markdown_file>
 ```
 
 ---
@@ -78,7 +78,6 @@ node (or bun) scripts/html-to-image.js --auto-fit <input-html> <output-image>
 |-----------|-------------|
 | `-t jpg` | Output format is png (default) |
 | `--auto-fit` | Auto-detect mindmap content size and adapt dimensions |
-| `--width 2560 --height 1664` | Resolution |
 | `input-html` | Input HTML file path |
 | `output-image` | Output image path |
 
@@ -89,7 +88,7 @@ node (or bun) scripts/html-to-image.js --auto-fit <input-html> <output-image>
 1. Read user-input text content or file path
 2. Call LLM to convert content into mind map Markdown format according to the rules above
 3. Save the generated Markdown to a temporary file (e.g., `/tmp/mindmap.md`)
-4. Execute `markmap --no-open --no-toolbar -o <html_file> <markdown_file>` to generate HTML
+4. Execute `markmap --offline --no-open --no-toolbar -o <html_file> <markdown_file>` to generate HTML
 5. Execute `node (or bun) scripts/html-to-image.js --auto-fit <html_file> <output-image>` to generate PNG image
 6. Inform user of the output image path | If user uses openclaw, send the image to the user as a file
 

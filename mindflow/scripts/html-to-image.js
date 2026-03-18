@@ -8,7 +8,7 @@
  *
  * Features:
  * - Auto-detect mindmap content size and adapt output dimensions
- * - Configurable PPI for output images (default: 448)
+ * - Configurable PPI for output images (default: 300)
  */
 
 import puppeteer from 'puppeteer';
@@ -20,7 +20,7 @@ const SUPPORTED_TYPES = ['png', 'jpeg', 'jpg'];
 
 // Default settings
 const DEFAULT_QUALITY = 80;
-const DEFAULT_PPI = 448;
+const DEFAULT_PPI = 300;
 const DEFAULT_WIDTH = 2560;
 const DEFAULT_HEIGHT = 1664;
 const DEFAULT_TIMEOUT = 120000;
@@ -47,9 +47,7 @@ Arguments:
 
 Options:
   -t, --type <format>         Output image format: png, jpeg, jpg (default: png)
-  --width <pixels>            Image width in pixels (default: 2560)
-  --height <pixels>           Image height in pixels (default: 1664)
-  --ppi <number>              Pixels per inch for output (default: 448)
+  --ppi <number>              Pixels per inch for output (default: 300)
   --auto-fit                  Auto-detect mindmap content size and adapt dimensions
   -q, --quality <0-100>       Image quality for JPEG (0-100, default: 80)
   --timeout <ms>              Timeout for rendering in milliseconds (default: 120000)
@@ -57,17 +55,7 @@ Options:
   --version                   Display version information
 
 Examples:
-  # Convert to JPEG with custom quality
-  node html-to-image.js input.html output.jpg
-
-  # Convert with custom resolution
-  node html-to-image.js input.html --width 3840 --height 2160 output.jpg
-
-  # Auto-fit mindmap content size
-  node html-to-image.js input.html --auto-fit output.png
-
-  # Full example
-  node html-to-image.js input.html -t png --width 1920 --height 1080 -q 80 output.jpg
+  node html-to-image.js --auto-fit --ppi 300 input.html output.png
 
 Notes:
   - PNG does not support quality parameter (lossless format)
