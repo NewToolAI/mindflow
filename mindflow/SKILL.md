@@ -69,7 +69,7 @@ markmap --no-open --no-toolbar -o <html_file> <markdown_file>
 Use html-to-image.js to convert HTML to image (default: jpg format):
 
 ```bash
-node | bun scripts/html-to-image.js -t jpg --width 1920 --height 1080 <input-html> <output-image>
+node | bun scripts/html-to-image.js -t jpg --width 2560 --height 1664 <input-html> <output-image>
 ```
 
 **Parameter Specifications:**
@@ -77,7 +77,7 @@ node | bun scripts/html-to-image.js -t jpg --width 1920 --height 1080 <input-htm
 | Parameter | Description |
 |-----------|-------------|
 | `-t jpg` | Output format is jpg (default) |
-| `--width 1920 --height 1080` | Resolution |
+| `--width 2560 --height 1664` | Resolution |
 | `input-html` | Input HTML file path |
 | `output-image` | Output image path |
 

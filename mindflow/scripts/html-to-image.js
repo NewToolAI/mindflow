@@ -22,8 +22,8 @@ const SUPPORTED_TYPES = ['png', 'jpeg', 'jpg'];
 
 // Default settings
 const DEFAULT_QUALITY = 80;
-const DEFAULT_WIDTH = 1920;
-const DEFAULT_HEIGHT = 1080;
+const DEFAULT_WIDTH = 2560;
+const DEFAULT_HEIGHT = 1664;
 const DEFAULT_TIMEOUT = 120000; // 120 seconds for complex pages
 
 /**
