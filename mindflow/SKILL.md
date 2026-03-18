@@ -1,7 +1,7 @@
 ---
 name: mindflow
 description: Converts text, Markdown files, or Txt files into mind map images. Use this skill when users want to generate mind maps/brain maps from articles, broadcast scripts, notes, or any text content. Supports specifying output format and resolution. This skill should be triggered whenever text needs to be converted into image-based mind maps, regardless of whether users explicitly mention mind map or 思维导图
-compatibility: Requires dependencies: markmap-cli, markmap-lib, markmap-render, node-html-to-image
+compatibility: "Requires dependencies: markmap-cli, markmap-lib, markmap-render, node-html-to-image"
 ---
 
 ## Text to Mind Map Skill
