@@ -38,6 +38,7 @@ Use LLM to convert input content into mind map Markdown format according to the 
 - **Strictly Follow Node Hierarchy:** Only one root node, subsequent nodes progress by hierarchy levels
 - **Support All Basic Markdown Syntax:** Bold, code, links, and LaTeX formulas can be embedded in node text
 - **Output Format Compliance:** Strictly follow the format below; do not output any other extraneous content
+- **Use Appropriate Emoji:** Use relevant emojis appropriately to enhance visual expression, but avoid excessive use
 - **Content Limit:** Ensure output content is **limited to 300 tokens**
 - **Hierarchy Limit:** Mind map generates maximum 4 levels (root node counts as level 1)
 
